@@ -57,3 +57,21 @@ export const filter = (filter) => {
     filter,
   };
 };
+
+// MENU
+
+export const openMenu = () => {
+  return {
+    type: ACTIONS.OPEN_MENU,
+  };
+};
+export const closeMenu = () => {
+  return {
+    type: ACTIONS.CLOSE_MENU,
+  };
+};
+export const toggleMenu = () => {
+  return {
+    type: ACTIONS.TOGGLE_MENU,
+  };
+};

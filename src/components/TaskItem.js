@@ -43,7 +43,7 @@ const TaskItem = ({
 
   return (
     <div className="grid grid-cols-6 items-center py-2 px-4 border-b border-gray-primary">
-      <div className="col-span-4">
+      <div className="col-span-3">
         <input
           type="checkbox"
           checked={status}
@@ -59,7 +59,7 @@ const TaskItem = ({
           {name}
         </span>
       </div>
-      <div className="flex items-center px-2 col-span-2">
+      <div className="flex items-center px-2 col-span-3">
         <BsDot className={`${iconColor[priority]} text-3xl`} />
         <span className="ml-4 text-xs font-medium">{`${priorities[priority]} Priority`}</span>
         <div className="ml-auto flex items-center justify-end">

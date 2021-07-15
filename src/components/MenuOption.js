@@ -1,12 +1,13 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
-const MenuOption = ({ icon, pathTo, name }) => {
+const MenuOption = ({ icon, pathTo, name, ...restProps }) => {
   const location = useLocation();
   const selected = location.pathname === pathTo;
 
   return (
     <Link
+      {...restProps}
       className={`font-semibold uppercase text-2xl  ${
         selected
           ? "text-white bg-gray-900 scale-125"

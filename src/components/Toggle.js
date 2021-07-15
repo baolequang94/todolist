@@ -4,7 +4,7 @@ import { FiSun, FiMoon } from "react-icons/fi";
 const Toggle = () => {
   return (
     <label
-      forHTML="toggle"
+      forhtml="toggle"
       className="flex items-center justify-center cursor-pointer"
     >
       <div className="relative">

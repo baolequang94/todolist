@@ -58,8 +58,8 @@ const TaskForm = () => {
 
   return (
     <div
-      className={`col-span-1 flex flex-col  ${
-        isDisplayForm ? "border border-black max-h-64" : "max-h-4"
+      className={`flex flex-col w-full h-full mb-10  ${
+        isDisplayForm ? "border border-black" : "max-h-4"
       }  `}
     >
       <div className="flex items-center justify-between py-2 px-4 bg-black">

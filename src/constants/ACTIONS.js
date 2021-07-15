@@ -13,3 +13,8 @@ export const CLOSE_FORM = "CLOSE_FORM";
 
 // FILTER
 export const FILTER = "FILTER";
+
+// MENU
+export const OPEN_MENU = "OPEN_MENU";
+export const CLOSE_MENU = "CLOSE_MENU";
+export const TOGGLE_MENU = "TOGGLE_MENU";
