@@ -9,7 +9,7 @@ import {
 } from "react-icons/ai";
 
 import { IoCloseOutline } from "react-icons/io5";
-import { BsListTask } from "react-icons/bs";
+import { FaTasks } from "react-icons/fa";
 import Logo from "./Logo";
 import Toggle from "./Toggle";
 // Redux
@@ -20,10 +20,10 @@ const Menu = () => {
   // Create elements containing ROUTE to Menu items
 
   const MenuIcons = [
-    <AiOutlineHome />,
-    <BsListTask />,
-    <AiOutlineFieldTime />,
-    <AiOutlineSetting />,
+    <AiOutlineHome className="text-2xl" />,
+    <FaTasks className="text-2xl" />,
+    <AiOutlineFieldTime className="text-2xl" />,
+    <AiOutlineSetting className="text-2xl" />,
   ];
 
   const { isDisplayMenu, isDarkMode } = useSelector((state) => state);
@@ -50,7 +50,7 @@ const Menu = () => {
         isDisplayMenu ? "left-0" : "-left-full"
       } flex  flex-col justify-between items-center h-screen sm:w-40 w-80 ${
         isDarkMode ? "bg-black-100" : "bg-white"
-      }  transition-all z-40`}
+      }  transition-all duration-700  z-40`}
     >
       <Logo type="menu" />
       <button
@@ -60,7 +60,7 @@ const Menu = () => {
       >
         <IoCloseOutline className={`${isDarkMode ? "text-gray-200" : ""}`} />
       </button>
-      <ul className="flex flex-col items-center justify-center">{elmLinks}</ul>
+      <ul className="flex flex-col justify-center">{elmLinks}</ul>
 
       <div className="flex flex-col items-center">
         <div className="mb-4">

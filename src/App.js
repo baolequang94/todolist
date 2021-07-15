@@ -21,7 +21,7 @@ function App() {
           <Switch>
             <Route path={ROUTES.HOME} exact component={UnderConstruction} />
             <Route path={ROUTES.SETTINGS} component={UnderConstruction} />
-            <Route path={ROUTES.TIME} component={UnderConstruction} />
+            <Route path={ROUTES.TIMELINE} component={UnderConstruction} />
             <Route path={ROUTES.TASK} component={Task} />
           </Switch>
         </div>

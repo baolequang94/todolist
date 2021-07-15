@@ -11,19 +11,21 @@ const MenuOption = ({ icon, pathTo, name, ...restProps }) => {
   return (
     <Link
       {...restProps}
-      className={`font-semibold uppercase text-2xl  ${
+      className={`text-xl  ${
         selected
           ? `text-gray-100 ${
               isDarkMode ? "bg-gray-700" : "bg-gray-900"
             }  scale-125`
           : `${isDarkMode ? "text-gray-200" : "text-gray-base"} hover:scale-125`
-      } transition-all cursor-pointer mb-6 flex items-center p-4 rounded-full ${
+      } transition-all cursor-pointer mb-8 flex items-center  px-4 py-3 rounded-full ${
         isDarkMode ? "hover:bg-gray-700" : "hover:bg-gray-900"
       } transform hover:text-white`}
       to={pathTo}
     >
       {icon}
-      {/* <span className="text-sm ml-2">{name}</span> */}
+      <span className="text-sm font-medium ml-2 capitalize">
+        {name.toLowerCase()}
+      </span>
     </Link>
   );
 };
