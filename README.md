@@ -26,11 +26,6 @@ Deployed with [Vercel](https://vercel.com/).
 From your command line, first clone this repo:
 
 ```
-git status
-git add
-git commit
-```
-
 # Clone this repository
 $ git clone https://github.com/lequangbao1/todolist
 
@@ -39,13 +34,18 @@ $ cd todolist
 
 # Remove current origin repository
 $ git remote remove origin
+```
+
 Then you can install the dependencies using NPM:
 
 Using NPM:
 
+```
 # Install dependencies
 $ npm install
 
 # Start development server
 $ npm start
+```
+
 You should now have a development server running in your default browser.
