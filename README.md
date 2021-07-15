@@ -1,4 +1,4 @@
-# To-Do Web App by Bao
+# To-Do Web App 📝 by Bao
 
 A website I've built for managing daily tasks with level of priority, constructed with create-react-app - applying concept of Redux, Hooks, Router and styling from Tailwind & React Icons. 
 
@@ -17,12 +17,19 @@ Moreover, I got the chance to work with Dark Mode with a lot of config into colo
 - Feature Timeline ...
 - Feature Settings ...
 
-# Deployment
+## Deployment
 
 Deployed with [Vercel](https://vercel.com/).
 
-Get started
+## Get started
+
 From your command line, first clone this repo:
+
+```
+git status
+git add
+git commit
+```
 
 # Clone this repository
 $ git clone https://github.com/lequangbao1/todolist
