@@ -18,3 +18,7 @@ export const FILTER = "FILTER";
 export const OPEN_MENU = "OPEN_MENU";
 export const CLOSE_MENU = "CLOSE_MENU";
 export const TOGGLE_MENU = "TOGGLE_MENU";
+
+// DARK MODE
+
+export const TOGGLE_DARK_MODE = "TOGGLE_DARK_MODE";

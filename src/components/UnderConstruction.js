@@ -1,5 +1,6 @@
 import React from "react";
 import { HiOutlineLightBulb } from "react-icons/hi";
+import { AiFillBell } from "react-icons/ai";
 
 const UnderConstruction = () => {
   return (
@@ -12,8 +13,8 @@ const UnderConstruction = () => {
         <button className="relative bg-gray-300 hover:bg-gray-400 text-gray-800 uppercase flex items-center justify-center border py-2 px-4 rounded-lg font-semibold transition-all active:opacity-75">
           <span className="mr-2">subscribe</span>
           <HiOutlineLightBulb className="text-xl" />
-          <span className="absolute h-3 w-3 -top-1 -right-1 animate-ping bg-red-400 opacity-75 rounded-full"></span>
-          <span class="absolute inline-flex  -top-1 -right-1 rounded-full h-3 w-3 bg-red-500"></span>
+          <span className="absolute h-4 w-4 -top-2 -right-2 animate-ping bg-red-400 opacity-75 rounded-full"></span>
+          <AiFillBell className="absolute inline-flex h-4 w-4  -top-2 -right-2 rounded-full  text-red-600 " />
         </button>
       </div>
     </div>

@@ -8,7 +8,7 @@ import {
   AiFillGithub,
 } from "react-icons/ai";
 
-import { GrFormClose } from "react-icons/gr";
+import { IoCloseOutline } from "react-icons/io5";
 import { BsListTask } from "react-icons/bs";
 import Logo from "./Logo";
 import Toggle from "./Toggle";
@@ -26,7 +26,7 @@ const Menu = () => {
     <AiOutlineSetting />,
   ];
 
-  const isDisplayMenu = useSelector((state) => state.menu);
+  const { isDisplayMenu, isDarkMode } = useSelector((state) => state);
 
   const dispatch = useDispatch();
 
@@ -48,14 +48,17 @@ const Menu = () => {
     <div
       className={`absolute top-0 sm:left-0 ${
         isDisplayMenu ? "left-0" : "-left-full"
-      } flex  flex-col justify-between items-center h-screen sm:w-40 w-80 bg-white transition-all z-50`}
+      } flex  flex-col justify-between items-center h-screen sm:w-40 w-80 ${
+        isDarkMode ? "bg-black-100" : "bg-white"
+      }  transition-all z-40`}
     >
       <Logo type="menu" />
       <button
-        className="absolute right-5 top-5 text-4xl opacity-50 visible sm:invisible"
+        className={` 
+           absolute right-5 top-5 opacity-80 text-4xl visible sm:invisible`}
         onClick={onCloseMenu}
       >
-        <GrFormClose />
+        <IoCloseOutline className={`${isDarkMode ? "text-gray-200" : ""}`} />
       </button>
       <ul className="flex flex-col items-center justify-center">{elmLinks}</ul>
 
@@ -65,10 +68,15 @@ const Menu = () => {
         </div>
         <Link
           to={{ pathname: "https://github.com/lequangbao1" }}
-          className="py-2 px-4 flex items-center justify-center mb-4"
+          className={`py-2 px-4 flex items-center justify-center mb-4 ${
+            isDarkMode ? "text-gray-200" : "text-black-100"
+          }`}
           target="_blank"
         >
-          <span className="mr-2 text-sm text-black font-semibold">
+          <span
+            className={`mr-2 text-sm 
+             font-semibold`}
+          >
             lequangbao1
           </span>{" "}
           <AiFillGithub className="text-xl" />

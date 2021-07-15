@@ -75,3 +75,11 @@ export const toggleMenu = () => {
     type: ACTIONS.TOGGLE_MENU,
   };
 };
+
+// DARK MODE
+
+export const toggleDarkMode = () => {
+  return {
+    type: ACTIONS.TOGGLE_DARK_MODE,
+  };
+};

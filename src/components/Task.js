@@ -5,8 +5,8 @@ import TaskItem from "./TaskItem";
 import TaskForm from "./TaskForm";
 
 const Task = () => {
-  const tasks = useSelector((state) => state.tasks);
-  const filter = useSelector((state) => state.filter);
+  const { isDarkMode, tasks, filter } = useSelector((state) => state);
+
   const dispatch = useDispatch();
 
   const handleChange = (e) => {
@@ -37,23 +37,41 @@ const Task = () => {
   const tasksFiltered = renderTasks(tasks);
 
   return (
-    <div className="h-screen bg-gray-background">
-      <div className="flex flex-col p-8 justify-between animate-fadeDown">
-        <div className=" flex flex-col w-full mr-10 order-2">
-          <div className="flex flex-col items-center justify-between py-2 px-4  bg-green-500">
-            <h1 className="font-semibold text-white mb-4">All Tasks</h1>
+    <div className="h-screen">
+      <div className="flex md:flex-row flex-col p-8 justify-between animate-fadeDown">
+        <div className=" flex flex-col w-full md:w-3/5 order-2 md:order-1 md:mr-10 ">
+          <div
+            className={`flex flex-col md:flex-row items-center justify-between py-2 px-4 ${
+              isDarkMode ? "bg-gray-800" : "bg-green-500"
+            }`}
+          >
+            <h1
+              className={`font-semibold ${
+                isDarkMode ? "text-gray-200" : "text-white"
+              }  mb-4 md:mb-0`}
+            >
+              All Tasks
+            </h1>
 
-            <div className="flex flex-col w-full">
+            <div className="flex flex-col md:flex-row w-full md:w-4/5 md:justify-between">
               <input
                 type="text"
-                className="form-input text-xs font-medium focus:ring-transparent border-2 border-green-500 focus:border-green-500 order-2 mb-4"
+                className={`form-input text-xs font-medium focus:ring-transparent border-2 ${
+                  isDarkMode
+                    ? "border-gray-800 focus:border-gray-800 bg-gray-700 text-gray-200"
+                    : "border-green-500 focus:border-green-500"
+                }  order-2 md:order-1 mb-4 md:mb-0 md:w-50 md:w-2/5`}
                 placeholder="Keyword..."
                 value={filter.name}
                 name="name"
                 onChange={handleChange}
               />
               <select
-                className={`form-select block text-xs font-medium focus:ring-transparent focus:border-green-500 border-2 border-green-500 mr-4 order-1 w-full mb-4`}
+                className={`form-select  text-xs font-medium focus:ring-transparent ${
+                  isDarkMode
+                    ? "border-gray-700 focus:border-gray-700 bg-gray-700 text-gray-200"
+                    : "border-green-500 focus:border-green-500"
+                } mr-4 order-1 md:order-2 w-full mb-4 md:mb-0 md:w-2/5`}
                 name="priority"
                 onChange={handleChange}
                 value={filter.priority}
@@ -74,6 +92,7 @@ const Task = () => {
                 name={task.name}
                 status={task.status}
                 priority={task.priority}
+                isDarkMode={isDarkMode}
               />
             ))}
         </div>

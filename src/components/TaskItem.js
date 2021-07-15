@@ -4,15 +4,7 @@ import * as actions from "../actions";
 import { BsDot } from "react-icons/bs";
 import { AiOutlineDelete, AiOutlineEdit } from "react-icons/ai";
 
-const TaskItem = ({
-  id,
-  name,
-  status,
-  priority,
-
-  // onEditTask,
-  showForm,
-}) => {
+const TaskItem = ({ id, name, status, priority, isDarkMode }) => {
   const priorities = ["None", "Low", "Medium", "High"];
   const iconColor = [
     "None",
@@ -36,14 +28,13 @@ const TaskItem = ({
     dispatch(actions.editTask({ id, name, status, priority }));
   };
 
-  // const editTask = () => {
-  //   onEditTask(id);
-  //   showForm();
-  // };
-
   return (
-    <div className="grid grid-cols-6 items-center py-2 px-4 border-b border-gray-primary">
-      <div className="col-span-3">
+    <div
+      className={`grid grid-cols-6 items-center py-2 px-4 border-b border-gray-primary ${
+        isDarkMode ? "text-gray-100" : ""
+      }`}
+    >
+      <div className="col-span-3 md:col-span-4">
         <input
           type="checkbox"
           checked={status}
@@ -59,7 +50,7 @@ const TaskItem = ({
           {name}
         </span>
       </div>
-      <div className="flex items-center px-2 col-span-3">
+      <div className="flex items-center px-2 col-span-3 md:col-span-2">
         <BsDot className={`${iconColor[priority]} text-3xl`} />
         <span className="ml-4 text-xs font-medium">{`${priorities[priority]} Priority`}</span>
         <div className="ml-auto flex items-center justify-end">
